@@ -1,8 +1,12 @@
-public class SudokuGame {
-    private final GameState ˆ;
+//package sudoku.problemdomain;
+
+import java.io.Serializable;
+
+public class SudokuGame implements Serializable {
+    private final GameState gameState;
     private final int[][] gridState;
 
-    public static final GRID_BOUNDRY = 9;
+    public static final int GRID_BOUNDRY = 9;
 
     public SudokuGame (GameState gameState, int[][] gridState) {
         this.gameState = gameState;
@@ -13,7 +17,7 @@ public class SudokuGame {
         return gameState;
     }
 
-    public int[][] gameGridState() {
-        return gridState;
+    public int[][] gitCopyOfGridState() {
+        return SudokuUtilities.copyToNewArray(gridState);
     }
 }
